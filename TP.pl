@@ -1,3 +1,8 @@
+persona(fernando).
+persona(julieta).
+persona(marcos).
+persona(santiago).
+persona(andres).
 
 programador(fernando , visualBasic).
 programador(fernando, cobol).
@@ -53,7 +58,10 @@ programaEnLosLenguajesDe(Proyecto, Persona) :-
 	lenguajeDe(Proyecto, Lenguaje),
 	programador(Persona, Lenguaje).
 
+proyectoBienDefinido(Proyecto) :-
+	forall(persona(Persona), personaCorrectamenteAsignadaEn(Proyecto, Persona)),
 	
+
 
 
 
