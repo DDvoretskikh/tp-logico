@@ -21,11 +21,45 @@ sabeProgramarEn(Persona, Lenguaje) :-
 rolesQueCumple(Persona, Rol) :-
 	rolDe(Persona, Rol).
 
+% Segunda Parte del TP.
+
+lenguajeDe(sumatra, java).
+lenguajeDe(sumatra, net).
+lenguajeDe(prometeus, cobol).
+
+trabajaEn(sumatra, julieta).
+trabajaEn(sumatra, marcos).
+trabajaEn(sumatra, andres).
+trabajaEn(prometeus, fernando).
+trabajaEn(prometeus, santiago).
+
+
+lenguajeNecesarioPara(Proyecto, Lenguaje) :-
+	lenguajeDe(Proyecto, Lenguaje).
+
+personaCorrectamenteAsignadaEn(Proyecto, Persona) :-
+	trabajaEn(Proyecto, Persona),
+	programaEnLosLenguajesDe(Proyecto, Persona).
+
+personaCorrectamenteAsignadaEn(Proyecto, Persona) :-
+	trabajaEn(Proyecto, Persona),
+	rolDe(Persona, analistaFuncional).
+
+personaCorrectamenteAsignadaEn(Proyecto, Persona) :-
+	trabajaEn(Proyecto, Persona),
+	rolDe(Persona, projectLeader).
+
+programaEnLosLenguajesDe(Proyecto, Persona) :-
+
+
+	
+
+
 
 /*
 Cosas que no agregamos:
 1) "Aun no sabemos si julieta programo en Go"
-No agregamos a Julieta en la base de conocimiento porque no es un hecho que haya programado en Go.
+No agregamos a Julieta en la base de conocimiento porque lo consideramos como un hecho que haya programado en Go.
 2)"Nadie programo en Assembler"
 No lo agregamos para definir que nadie programo en Assembler.
 
@@ -37,25 +71,12 @@ d) programador(fernando, _).
 e) rolesQueCumple(fernando, Rol)
 f) programador(Persona, _).
 g) rolDe(_, projectLeader).
-
-
----------------------------------------------------------------------
-
-lenguajeDe(Sumatra, java).
-lenguajeDe(Sumatra, net).
-
-personaDe(Sumatra, julieta).
-personaDe(Sumatra, marcos).
-personaDe(Sumatra, andres).
-
-lenguajeDe(Prometeus, cobol).
-
-personaDe(Prometeus, fernando).
-personaDe(Prometeus, santiago).
-
-personaCorrectamenteAsignadaEn(Proyecto, Persona) :-
-	personaDe(Proyecto, Persona),
 /*
+
+
+
+
+
 
 
 
