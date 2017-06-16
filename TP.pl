@@ -50,7 +50,8 @@ personaCorrectamenteAsignadaEn(Proyecto, Persona) :-
 	rolDe(Persona, projectLeader).
 
 programaEnLosLenguajesDe(Proyecto, Persona) :-
-
+	lenguajeDe(Proyecto, Lenguaje),
+	programador(Persona, Lenguaje).
 
 	
 
